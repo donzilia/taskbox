@@ -38,10 +38,7 @@ app.get('/forgot-password', (req, res) => {
 })
 
 app.get('', (req, res) => {
-    res.render('index', {
-        title: 'Weather',
-        name: 'Andrew Mead'
-    })
+    res.render('dashboard', {})
 })
 
 

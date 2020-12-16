@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.taskBox-main-1-hex { color: #577361; }
+.taskBox-main-2-hex { color: #D1FFE2; }
+.taskBox-main-3-hex { color: #5BD989; }
+.taskBox-main-4-hex { color: #3C8055; }
+.taskBox-main-5-hex { color: #98CAAB; }
+
+/* Color Theme Swatches in RGBA */
+.taskBox-main-1-rgba { color: rgba(87, 115, 97, 1); }
+.taskBox-main-2-rgba { color: rgba(209, 255, 226, 1); }
+.taskBox-main-3-rgba { color: rgba(91, 217, 137, 1); }
+.taskBox-main-4-rgba { color: rgba(60, 128, 85, 1); }
+.taskBox-main-5-rgba { color: rgba(152, 202, 171, 1); }
+
+/* Color Theme Swatches in HSLA */
+.taskBox-main-1-hsla { color: hsla(141, 13, 39, 1); }
+.taskBox-main-2-hsla { color: hsla(142, 100, 90, 1); }
+.taskBox-main-3-hsla { color: hsla(141, 62, 60, 1); }
+.taskBox-main-4-hsla { color: hsla(142, 36, 36, 1); }
+.taskBox-main-5-hsla { color: hsla(142, 32, 69, 1); }

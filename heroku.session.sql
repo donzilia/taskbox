@@ -1,3 +1,6 @@
+create schema taskbox;
+use taskbox;
+
 create table users(
     id int not null unique auto_increment,
     email varchar(100) not null unique, 
@@ -6,8 +9,8 @@ create table users(
     pass blob not null,
     is_loggedin tinyint not null,
     created_at timestamp default current_timestamp,
-    updated_at timestamp null default null,
-    deleted_at timestamp null default null
+    updated_at timestamp default null on update current_timestamp,
+    deleted_at timestamp default null
 );
 
 
@@ -19,8 +22,8 @@ create table tasks(
     periodicity_id int not null,
     dayweek varchar(45)  default null,
     created_at timestamp default current_timestamp,
-    updated_at timestamp null default null,
-    deleted_at timestamp null default null
+    updated_at timestamp default null on update current_timestamp,
+    deleted_at timestamp default null
 );
 
 

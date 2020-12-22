@@ -22,6 +22,16 @@ app.use(express.static(publicDirectoryPath))
 require("./routes/web.routes")(router)
 app.use("", router)
 
+//  sync database
+/*
+const database = require('./models/index');
+try {
+    const resultado = database.sync();
+    console.log(resultado);
+} catch (error) {
+    console.log(error);
+}*/
+
 // server listening to port
 app.listen(port, () => {
     console.log('Server is up on port ' + port)

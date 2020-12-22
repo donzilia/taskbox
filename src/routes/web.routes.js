@@ -1,8 +1,8 @@
 const TaskController = require("../controllers/task.controller")
-const asyncRoute = require("../handlers/async.route")
+const asyncRoute = require("../middleware/async.route")
 
 module.exports = (router) => {
-    router.get('/', (req, res) => { res.render('dashboard', {}) })
+    router.get('/',  asyncRoute(TaskController.index))
     router.get('/login', (req, res) => { res.render('login', {}) })
     router.get('/register', (req, res) => { res.render('register', {}) })
     router.get('/forgot-password', (req, res) => { res.render('forgotpassword', {}) })

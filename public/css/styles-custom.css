@@ -1,7 +1,6 @@
 nav #centered{
     width: 80%;
     background: #fff;
-    box-shadow: 0px 5px 0px #dedede;
   }
   nav #centered {
     list-style: none;
@@ -58,3 +57,6 @@ nav.shift #centered li a {
     height: 100%;
   }
   
+  .pc-2{
+    padding: 2rem!important;
+  }

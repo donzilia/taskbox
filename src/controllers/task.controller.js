@@ -3,10 +3,13 @@ const db = require("../models/index")
 const Task = db.Task;
 module.exports = {
     
-    Index: () => {
-        let tasks = db.Task.findAll().then(res => {
-            console.log(res);
-        });
+    index: async (req, res, next) => {
+        let tasks = await db.Task.findAll()
+            
+        res.render("dashboard", {
+            title: "Dashboard",
+            tasks: tasks
+        })
     },
 
 };

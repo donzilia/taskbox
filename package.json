@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e js,hbs"
+    "dev": "nodemon src/app.js -e js,hbs",
+    "test": "node ./node_modules/mocha/bin/_mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
     "express": "^4.16.4",
     "hbs": ">=4.1.1",
+    "mocha": "^8.2.1",
     "mysql2": "^2.2.5",
     "request": "^2.88.0",
     "sequelize": "^6.3.5"

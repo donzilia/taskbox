@@ -1,9 +1,9 @@
 <p align="center">
-    <h1>taskBox</h1>
+    <h1 align="center">taskBox</h1>
 </p>
 
 <p align="center">
-    <h2>TO-DO Web Application built with Node.js, Handlebars and Sequelize</h1>
+    <h2 align="center">TO-DO Web Application built with Node.js, Handlebars and Sequelize</h1>
 </p>
 
 <p align="center">

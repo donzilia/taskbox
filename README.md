@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center">taskBox</h1>
+    <img src="https://raw.githubusercontent.com/adevr/taskbox/main/public/img/taskBox_ID.svg" alt="taskbox" />
 </p>
 
 <p align="center">

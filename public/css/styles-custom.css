@@ -60,3 +60,77 @@ nav.shift #centered li a {
   .pc-2{
     padding: 2rem!important;
   }
+
+  .bg-green{
+    background-image: linear-gradient(to left bottom, #5bd989, #53c27c, #4bab6f, #449562, #3c8055);
+  }
+
+  .container-ctm{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  
+  .container-form{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  .h-40rm{
+    height: 40rem;
+  }
+
+  .custom-input-group{
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .custom-input-prepend{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius:10rem;
+    border-bottom-right-radius: 10rem;
+  }
+
+  .custom-file-label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: calc(1.5em + .75rem);
+    padding: .375rem .75rem;
+    line-height: .8;
+    color: #6e707e;
+    content: "Browse";
+    background-color: #eaecf4;
+    border-left: inherit;
+    padding: 1.5rem 1rem;
+    /* border-radius: 0 .35rem .35rem 0; */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+}
+
+
+.xs-image {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .xs-image {
+    display: block;
+  } 
+}

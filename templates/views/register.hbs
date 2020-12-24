@@ -2,63 +2,77 @@
 <html lang="en">
 
 <head>
-{{>site_head}}
-<title>taskBox</title>
+    {{>site_head}}
+    <title>taskBox</title>
 </head>
-<body class="bg-gradient-primary">
-    <div class="container">«
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+
+<body class="bg-green">
+    <div class="container-ctm">
+        <div class="row justify-content-center">
+
+            <div class="col-xl-8 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0 h-40rm">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row h-100">
+                            <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                            <div class="col-lg-7 container-form">
+
+                                <div class="p-5">
+                                    <div class="xs-image text-center pb-5">
+                                        <img src="/img/taskBox_ID.svg" width="200" alt="taskbox" />
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleFirstName" placeholder="First Name">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleLastName" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" placeholder="Email Address">
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Password">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group mb-4">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input custom-input-prepend"
+                                                    id="validatedInputGroupCustomFile" required>
+                                                <label class="custom-file-label custom-input-group"
+                                                    for="validatedInputGroupCustomFile">Choose file...</label>
+                                            </div>
+                                        </div>
+                                        <a href="/register" class="btn btn-primary btn-user btn-block">
+                                            Register Account
+                                        </a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="/login">Already have an account? Login!</a>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <a href="/register" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </a>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="/forgot-password">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="/login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript-->
@@ -70,5 +84,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
+
 </html>

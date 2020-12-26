@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="53681511-4780-499e-9351-3429a3770c67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/auth.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/web.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.routes.js" afterDir="false" />
     </list>
@@ -45,7 +47,8 @@
       <option name="presentableId" value="Default" />
       <updated>1608678066032</updated>
       <workItem from="1608678071277" duration="88000" />
-      <workItem from="1608938980299" duration="2780000" />
+      <workItem from="1608938980299" duration="3078000" />
+      <workItem from="1609005466986" duration="4044000" />
     </task>
     <servers />
   </component>
@@ -62,5 +65,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

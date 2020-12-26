@@ -9,7 +9,7 @@ module.exports = (router) => {
      * login and register routes
      */
     router.get('/login', (req, res) => { res.render('login', {}) })
-    router.post('/login', (req, res) => { asyncRoute(UserController.store) })
+    router.post('/register',  asyncRoute(UserController.store))
     router.get('/register', (req, res) => { res.render('register', {}) })
     router.get('/forgot-password', (req, res) => { res.render('forgotpassword', {}) })
 

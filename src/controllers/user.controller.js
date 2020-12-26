@@ -33,4 +33,7 @@ module.exports = {
         //todo: implement mailer here
     },
 
+    login: async (req, res, next) => {
+
+    }
 }

@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 const app = express()
 const router = express.Router()
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000
 
 // Define paths for Express config
@@ -17,6 +18,9 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // routes
 require("./routes/web.routes")(router)

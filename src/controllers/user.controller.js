@@ -34,6 +34,25 @@ module.exports = {
     },
 
     login: async (req, res, next) => {
-
+        let {email, password} = req.body;
+        if((email == null || email == undefined) || (password == null || password == undefined)){
+            res.render("login", {
+                error: INVALID_CREDENTIALS,
+                message: "Invalid login credentials. Please try again!"
+            })
+        }
+        // validar pela hash da password
+        const user = await User.findOne({where: {email: email, password: password}})
+        if(user === null || user === undefined){
+            res.render("login", {
+                error: USER_NOT_FOUND,
+                message: "User with this credentials not found. Please try again!"
+            })
+        }
+        
+        req.session.loggedin = true
+        req.session.email = email
+        res.redirect("/")
+        res.end();
     }
 }

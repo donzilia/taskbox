@@ -1,13 +1,11 @@
-const User = require("../models/index").User;
+const User = require("../models/index").User
+const ERRORS = require("../config/errors")
 
 module.exports = {
     store: async (req, res, next) => {
         let {email, picture, fullname, password} = req.body
         if (email !== null) {
-            res.render("register", {
-                error: true,
-                message: "Invalid E-mail"
-            })
+            res.render("register", ERRORS.INVALID_CREDENTIALS)
         }
 
         //todo: make validator middleware
@@ -18,10 +16,7 @@ module.exports = {
         }
 
         if (user) {
-            res.render("register", {
-                error: true,
-                message: "User already registered on the platform"
-            })
+            res.render("register", ERRORS.USER_REGISTERED)
         }
     },
 
@@ -36,18 +31,12 @@ module.exports = {
     login: async (req, res, next) => {
         let {email, password} = req.body;
         if((email == null || email == undefined) || (password == null || password == undefined)){
-            res.render("login", {
-                error: INVALID_CREDENTIALS,
-                message: "Invalid login credentials. Please try again!"
-            })
+            res.render("login", ERRORS.INVALID_CREDENTIALS)
         }
         // validar pela hash da password
         const user = await User.findOne({where: {email: email, password: password}})
         if(user === null || user === undefined){
-            res.render("login", {
-                error: USER_NOT_FOUND,
-                message: "User with this credentials not found. Please try again!"
-            })
+            res.render("login", ERRORS.USER_NOT_FOUND)
         }
         
         req.session.loggedin = true

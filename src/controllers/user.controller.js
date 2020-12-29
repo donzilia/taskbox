@@ -4,10 +4,11 @@ const mailer = require("../services/mailer")
 
 module.exports = {
     store: async (req, res, next) => {
-        let { email, picture, fullname, password } = req.body
-        
-        const [user,created] = await User.findOrCreate({ where: 
-            { email: email, fullName: fullname, pass: password }
+        let {email, picture, fullname, password} = req.body
+
+        const [user, created] = await User.findOrCreate({
+            where:
+                {email: email, fullName: fullname, pass: password}
         })
 
         if (created) {
@@ -24,7 +25,7 @@ module.exports = {
                     console.log(`Email sent to  - ${email}`);
                 }
             });
-        }else{
+        } else {
             res.render("register", ERRORS.USER_REGISTERED)
         }
     },
@@ -38,10 +39,10 @@ module.exports = {
     },
 
     login: async (req, res, next) => {
-        let { email, password } = req.body;
-        
+        let {email, password} = req.body;
+
         //todo: validar pela hash da password
-        const user = await User.findOne({ where: { email: email, pass: password } })
+        const user = await User.findOne({where: {email: email, pass: password}})
         if (user === null || user === undefined) {
             res.render("login", ERRORS.USER_NOT_FOUND)
         }
@@ -50,5 +51,19 @@ module.exports = {
         req.session.email = email
         res.redirect("/")
         res.end();
+    },
+
+    activate: async (req, res, next) => {
+        let {userId} = req.params
+
+        let user = await User.findByPk(userId)
+        if(! user instanceof User){
+            res.render("/login", ERRORS.USER_NOT_FOUND)
+        }
+
+        user.is_active = 1;
+        await user.save();
+
+        res.render("/login", "success object here")
     }
 }

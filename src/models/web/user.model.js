@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         profilePic: DataTypes.STRING,
         pass: DataTypes.STRING,
         is_loggedin: DataTypes.TINYINT,
+        is_active: DataTypes.TINYINT,
         created_at: DataTypes.DATE,
         updated_at: DataTypes.DATE,
         deleted_at: DataTypes.DATE,

@@ -13,6 +13,7 @@ module.exports = (router) => {
     router.post('/login', asyncRoute(UserController.login))
     router.post('/register', requestsMiddleware.registerValidator ,asyncRoute(UserController.store))
     router.get('/register', (req, res) => { res.render('register', {}) })
+    router.get('/activate/:userId', requestsMiddleware.activationValidator, asyncRoute(UserController.activate))
     router.get('/forgot-password', (req, res) => { res.render('forgotpassword', {}) })
 
     /***

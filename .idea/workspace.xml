@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53681511-4780-499e-9351-3429a3770c67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/task.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/task.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/requests.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/requests.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/web/task.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/web/task.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/web/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/web/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/web.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="ProjectId" id="1m23sGCQYa1OTivpOHq2ebG6ioZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,6 +62,8 @@
       <workItem from="1608678071277" duration="88000" />
       <workItem from="1608938980299" duration="3078000" />
       <workItem from="1609005466986" duration="4044000" />
+      <workItem from="1609268092804" duration="1468000" />
+      <workItem from="1609269621953" duration="6000" />
     </task>
     <servers />
   </component>
@@ -66,5 +81,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/user.controller.js</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/user.controller.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

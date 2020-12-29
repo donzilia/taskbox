@@ -1,3 +1,4 @@
+const dotenv = require('dotenv')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
@@ -5,6 +6,9 @@ const app = express()
 const router = express.Router()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000
+const session = require('express-session');
+dotenv.config({path: __dirname + '/.env'})
+
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -19,22 +23,17 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // routes
 require("./routes/web.routes")(router)
 app.use("", router)
-
-//  sync database
-/*
-const database = require('./models/index');
-try {
-    const resultado = database.sync();
-    console.log(resultado);
-} catch (error) {
-    console.log(error);
-}*/
 
 // server listening to port
 app.listen(port, () => {

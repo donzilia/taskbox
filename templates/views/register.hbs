@@ -25,42 +25,46 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="/register">
+                                        {{#if error}}
                                         <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="text" class="form-control form-control-user"
-                                                    id="exampleFirstName" placeholder="First Name">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control form-control-user"
-                                                    id="exampleLastName" placeholder="Last Name">
+                                            <div class="card bg-danger text-white shadow w-100">
+                                                <div class="card-body">
+                                                    Error
+                                                    <div class="text-white-50 small">{{message}}</div>
+                                                </div>
                                             </div>
                                         </div>
+                                        {{/if}}
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user"
+                                                id="fullName" placeholder="Full Name..." name="fullname">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" name="email"
                                                 id="exampleInputEmail" placeholder="Email Address">
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password" class="form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Password">
+                                                    id="exampleInputPassword" placeholder="Password" name="password">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="password" class="form-control form-control-user"
-                                                    id="exampleRepeatPassword" placeholder="Repeat Password">
+                                                    id="exampleRepeatPassword" placeholder="Repeat Password" name="confirm-password">
                                             </div>
                                         </div>
                                         <div class="input-group form-group mb-4">
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input custom-input-prepend"
-                                                    id="validatedInputGroupCustomFile" required>
+                                                    id="validatedInputGroupCustomFile" name="profilePic">
                                                 <label class="custom-file-label custom-input-group"
                                                     for="validatedInputGroupCustomFile">Choose file...</label>
                                             </div>
                                         </div>
-                                        <a href="/register" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Register Account
-                                        </a>
+                                        </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">

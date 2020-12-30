@@ -24,7 +24,6 @@ hbs.registerHelper('for', function (from, to, incr, block) {
 	var accum = '';
 
 	for (var i = from; i < to; i += incr) {
-		console.log(i);
 		for (let j = 0; j < block[i].length; j++) {
 			if (j > 1) {
 				accum += `<span class="badge badge-pill mr-1" style="background-color: lightgray">...</span>`;

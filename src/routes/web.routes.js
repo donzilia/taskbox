@@ -2,24 +2,28 @@ const TaskController = require("../controllers/task.controller")
 const UserController = require("../controllers/user.controller")
 const asyncRoute = require("../middleware/async.route")
 const requestsMiddleware = require("../middleware/requests.middleware")
+const {signInChecker} = require("../middleware/redirect.middleware")
+const userController = require("../controllers/user.controller")
 
 module.exports = (router) => {
-    router.get('/', asyncRoute(TaskController.index))
-
+    router.get('/', signInChecker, asyncRoute(TaskController.index))
     /**
      * login and register routes
      */
-    router.get('/login', (req, res) => { res.render('login', {}) })
+    router.get('/login',(req, res) => { res.render('login', {}) })
     router.post('/login', asyncRoute(UserController.login))
     router.post('/register', requestsMiddleware.registerValidator ,asyncRoute(UserController.store))
     router.get('/register', (req, res) => { res.render('register', {}) })
     router.get('/activate/:userId', requestsMiddleware.activationValidator, asyncRoute(UserController.activate))
     router.get('/forgot-password', (req, res) => { res.render('forgotpassword', {}) })
+    router.post('/forgot-password', asyncRoute(UserController.forgotPwd))
+    router.get('/reset-password/:userId', UserController.viewResetPassword)
+    router.post('/reset-password/:userId', asyncRoute(UserController.resetPwd))
 
     /***
      * Tasks routes
      */
-    router.get('/tasks', asyncRoute(TaskController.index))
+    router.get('/tasks', signInChecker, asyncRoute(TaskController.index))
 
     /**
      * User routes

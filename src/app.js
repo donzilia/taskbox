@@ -22,12 +22,12 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
-
 app.use(session({
 	secret: 'secret',
 	resave: true,
 	saveUninitialized: true
 }));
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 

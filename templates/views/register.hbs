@@ -37,8 +37,8 @@
                                         </div>
                                         {{/if}}
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="fullName" placeholder="Full Name..." name="fullname">
+                                            <input type="text" class="form-control form-control-user" id="fullName"
+                                                placeholder="Full Name..." name="fullname">
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" name="email"
@@ -51,7 +51,8 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="password" class="form-control form-control-user"
-                                                    id="exampleRepeatPassword" placeholder="Repeat Password" name="confirm-password">
+                                                    id="exampleRepeatPassword" placeholder="Repeat Password"
+                                                    name="confirm-password">
                                             </div>
                                         </div>
                                         <div class="input-group form-group mb-4">
@@ -85,6 +86,20 @@
 
     <!-- Core plugin JavaScript-->
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        {{#if success}}
+        $(document).ready(function (e) {
+            swal({
+                title: 'Success!',
+                text: `{{message}}`,
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+        })
+        {{/if}}
+    </script>
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>

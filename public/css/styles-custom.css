@@ -144,3 +144,24 @@ nav.shift #centered li a {
   font-size:20px;
   line-height: 24px;
 }
+
+
+.plus-sign-global{
+  position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    background-color: orange;
+    font-size: 60px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.plus-sign-global:hover{
+  text-decoration: none;
+}

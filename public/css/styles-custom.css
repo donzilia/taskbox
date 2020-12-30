@@ -165,3 +165,7 @@ nav.shift #centered li a {
 .plus-sign-global:hover{
   text-decoration: none;
 }
+
+.border-45{
+  border-radius: 45px;
+}

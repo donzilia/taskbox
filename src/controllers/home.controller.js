@@ -2,7 +2,11 @@ const {Tag, User} = require("../models/index")
 module.exports = {
     
     index: async (req, res, next) => {
-        const user = await User.findOne({where: {email: req.session.email, is_active: 1}, include: "tasks", order: [['tasks', "status", "DESC"], ['created_at', 'ASC']] })
+        const user = await User.findOne({
+            where: {email: req.session.email, is_active: 1},
+            include: "tasks",
+            order: [['tasks', "status", "DESC"], ['created_at', 'ASC']]
+        })
         const tags = await Tag.findAll()
         //todo: get daily tasks completation
         //todo: get all tags count (define algorithm)

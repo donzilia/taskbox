@@ -4,17 +4,26 @@
 
 <head>
     <title>404</title>
-    <link rel="icon" href="/img/weather.png">
-    <link rel="stylesheet" href="/css/styles.css">
+ {{>site_head}}
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <p>{{errorMessage}}</p>
+    <div class="container text-center">
+        <img src="/img/taskBox_404.svg" alt="404"/><br>
+        <a href="/" class="btn btn-primary border-45 btn-icon-split">
+            <span class="icon text-white-600">
+                <i class="fas fa-arrow-right"></i>
+            </span>
+            <span class="text">Go to Homepage</span>
+        </a>
     </div>
-    
-    {{>footer}}
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; taskBox 2020</span>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

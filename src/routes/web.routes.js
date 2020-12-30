@@ -29,4 +29,9 @@ module.exports = (router) => {
      * User routes
      */
 
+    router.get('*', (req,res) => {
+        res.render("404");
+    })
+
 }
+

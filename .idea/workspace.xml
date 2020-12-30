@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53681511-4780-499e-9351-3429a3770c67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/home.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/home.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/web.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/404.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/404.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/dashboard.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/dashboard.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/register.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +91,18 @@
           <url>file://$PROJECT_DIR$/src/controllers/user.controller.js</url>
           <line>59</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app.js</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/models/web/user.model.js</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

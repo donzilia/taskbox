@@ -17,7 +17,7 @@ module.exports = {
                 from: "no-reply@taskbox.com",
                 to: email,
                 subject: "TASKBOX - REGISTRATION CONFIRMATION",
-                text: `Hello ${fullname}, in order to confirm your registration please click <a href="localhost:3000/activate/${user.id}">here.</a>`,
+                text: `Hello ${fullname}, in order to confirm your registration please click <a href="https://taskbox-web-app.herokuapp.com/activate/${user.id}">here.</a>`,
             }
             mailer.sendMail(confirmationEmail, function (error) {
                 if (error) {
@@ -47,7 +47,7 @@ module.exports = {
             from: "no-reply@taskbox.com",
             to: email,
             subject: "TASKBOX - Password Reset",
-            text: `Hello ${user.fullName}, in order to reset your password credentials please click <a href="localhost:3000/reset-password/${user.id}">here.</a>`,
+            text: `Hello ${user.fullName}, in order to reset your password credentials please click <a href="https://taskbox-web-app.herokuapp.com/reset-password/${user.id}">here.</a>`,
         }
         mailer.sendMail(resetEmail, function (error) {
             if (error) {

@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53681511-4780-499e-9351-3429a3770c67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/task.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/task.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/requests.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/requests.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/web/task.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/web/task.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/web/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/web/user.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +78,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/user.controller.js</url>
           <line>36</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/user.controller.js</url>
           <line>59</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

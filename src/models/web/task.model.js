@@ -13,10 +13,13 @@ module.exports = (sequelize, DataTypes) => {
         tags: DataTypes.STRING,
         periodicity_id: DataTypes.INTEGER,
         dayweek: DataTypes.STRING,
+        userId: DataTypes.INTEGER,
+        status: DataTypes.INTEGER,
         created_at: DataTypes.DATE,
         updated_at: DataTypes.DATE,
         deleted_at: DataTypes.DATE,
     }, { timestamps: false, tableName: "tasks" });
+
     return Task;
 }
 

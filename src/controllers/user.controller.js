@@ -115,5 +115,12 @@ module.exports = {
         await user.save();
 
         res.render("login", MESSAGE.USER_ACTIVATED)
+    },
+
+    logout: (req,res,next) => {
+        req.session.loggedin = false;
+        req.session.email = null;
+        req.session.destroy();
+        res.redirect("/login");
     }
 }

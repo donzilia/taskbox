@@ -1,12 +1,12 @@
 const TaskController = require("../controllers/task.controller")
+const HomeController = require("../controllers/home.controller")
 const UserController = require("../controllers/user.controller")
 const asyncRoute = require("../middleware/async.route")
 const requestsMiddleware = require("../middleware/requests.middleware")
 const {signInChecker} = require("../middleware/redirect.middleware")
-const userController = require("../controllers/user.controller")
 
 module.exports = (router) => {
-    router.get('/', signInChecker, asyncRoute(TaskController.index))
+    router.get('/', signInChecker, asyncRoute(HomeController.index))
     /**
      * login and register routes
      */
@@ -19,11 +19,11 @@ module.exports = (router) => {
     router.post('/forgot-password', asyncRoute(UserController.forgotPwd))
     router.get('/reset-password/:userId', UserController.viewResetPassword)
     router.post('/reset-password/:userId', asyncRoute(UserController.resetPwd))
+    router.get('/logout', signInChecker,UserController.logout)
 
     /***
      * Tasks routes
      */
-    router.get('/tasks', signInChecker, asyncRoute(TaskController.index))
 
     /**
      * User routes

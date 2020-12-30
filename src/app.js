@@ -7,7 +7,7 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000
 const session = require('express-session');
-dotenv.config({path: __dirname + '/.env'})
+dotenv.config({ path: __dirname + '/.env' })
 
 
 // Define paths for Express config
@@ -20,6 +20,22 @@ app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
+hbs.registerHelper('for', function (from, to, incr, block) {
+	var accum = '';
+
+	for (var i = from; i < to; i += incr) {
+		console.log(i);
+		for (let j = 0; j < block[i].length; j++) {
+			if (j > 1) {
+				accum += `<span class="badge badge-pill mr-1" style="background-color: lightgray">...</span>`;
+				break;
+			}
+			let tag = block[i][j][0].dataValues
+			accum += `<span class="badge badge-pill mr-1" style="background-color: ${tag.color}">${tag.title}</span>`;
+		}
+	}
+	return accum;
+});
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 app.use(session({
@@ -37,5 +53,5 @@ app.use("", router)
 
 // server listening to port
 app.listen(port, () => {
-    console.log('Server is up on port ' + port)
+	console.log('Server is up on port ' + port)
 })

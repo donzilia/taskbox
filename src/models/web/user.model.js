@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
         deleted_at: DataTypes.DATE,
     }, { timestamps: false, tableName: "users" });
 
+    User.associate = (models) => {
+        User.hasMany(models.Task, { sourceKey: 'id', foreignKey: 'userId', as: 'tasks'})
+    }
+   
     User.generateHash = (password) => {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
     }

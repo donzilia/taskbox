@@ -134,3 +134,13 @@ nav.shift #centered li a {
     display: block;
   } 
 }
+
+.h-438{
+  height: 438px;
+}
+
+.color-title{
+  color:rgba(0,0,0,0.5);
+  font-size:20px;
+  line-height: 24px;
+}

@@ -87,15 +87,16 @@
                                     <h6 class="m-0 font-weight-bold color-title">Tags Count</h6>
                                 </div>
                                 <div class="card-body overflow-auto p-1">
+                                    {{#each tags}}
                                     <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
+                                        <div class="card border-left-primary h-100" style="border-left: .25rem solid {{this.color}}!important;">
                                             <div class="card-body p-2">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div
                                                             class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
+                                                            {{this.title}}</div>
+                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">{{tagCount ../tCounter this.id}}
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -105,132 +106,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{/each}}
                                 </div>
                             </div>
                         </div>

@@ -29,6 +29,7 @@ module.exports = (router) => {
     /**
      * User routes
      */
+    router.get('/profile',(req, res) => { res.render('userprofile', {}) })
 
     router.get('*', (req,res) => {
         res.render("404");

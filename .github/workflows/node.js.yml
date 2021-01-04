@@ -28,9 +28,9 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
       env:
-        DATABASE_CONNECTION: "mysql://bb7f8060e16a1c:7af9692b@us-cdbr-east-02.cleardb.com/heroku_e4eae8d9e5d0946?reconnect=true"
-        MAIL_HOST: "smtp-relay.sendinblue.com"
-        MAIL_PASS: "LsFaWMGgZwctjJ62"
-        MAIL_PORT: 587
-        MAIL_USER: "alex.cst.reis@gmail.com"
+        DATABASE_CONNECTION: ${{ secrets.DATABASE_CONNECTION }}
+        MAIL_HOST: ${{ secrets.MAIL_HOST }}
+        MAIL_PASS: ${{ secrets.MAIL_PASS }}
+        MAIL_PORT: ${{ secrets.MAIL_PORT }}
+        MAIL_USER: ${{ secrets.MAIL_USER }}
 

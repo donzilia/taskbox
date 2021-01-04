@@ -29,7 +29,7 @@
                                     <h6 class="m-0 font-weight-bold color-title">Daily Tasks</h6>
                                 </div>
                                 <div class="card-body overflow-auto p-1">
-                                    {{#each user.tasks}}
+                                    {{#each user.Tasks}}
                                     <div class="col-md-12 col-sm-12 mb-2 p-0">
                                         <div class="card h-100">
                                             <div class="card-body p-2 {{#if this.status}} {{else}} bg-light {{/if}}">
@@ -87,15 +87,16 @@
                                     <h6 class="m-0 font-weight-bold color-title">Tags Count</h6>
                                 </div>
                                 <div class="card-body overflow-auto p-1">
+                                    {{#each tags}}
                                     <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
+                                        <div class="card border-left-primary h-100" style="border-left: .25rem solid {{this.color}}!important;">
                                             <div class="card-body p-2">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div
                                                             class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
+                                                            {{this.title}}</div>
+                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">{{tagCount ../tCounter this.id}}
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -105,132 +106,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card border-left-primary h-100">
-                                            <div class="card-body p-2">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Earnings (Monthly)</div>
-                                                        <div class="h5 mb-1 font-weight-bold text-gray-800">4
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{/each}}
                                 </div>
                             </div>
                         </div>
@@ -268,6 +144,39 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
+
+    <script>
+        var ctx = document.getElementById("myPieChart");
+        var myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Completed", "Non Completed"],
+                datasets: [{
+                    data: [{{completedData}}],
+                    backgroundColor: ['#4e73df', '#1cc88a'],
+                    hoverBackgroundColor: ['#5BD989', '#17a673'],
+                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 80,
+            },
+        });
+    </script>
 
 </body>
 

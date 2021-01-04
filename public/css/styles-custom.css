@@ -154,24 +154,27 @@ nav.shift #centered li a:hover:after {
 }
 
 
-.plus-sign-global {
-    position: absolute;
+.plus-sign-global{
+  position: fixed;
     bottom: 100px;
-    right: 50px;
-    width: 100px;
-    height: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
     z-index: 3;
-    background-color: orange;
-    font-size: 60px;
+    background-color: #50BF79;
+    font-size: 40px;
     text-align: center;
     border-radius: 50%;
     color: white;
     cursor: pointer;
     text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.plus-sign-global:hover {
+.plus-sign-global:hover{
     text-decoration: none;
+    color: white;
+    background-color: #5BD989;
 }
 
 .border-45 {

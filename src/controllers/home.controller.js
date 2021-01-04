@@ -12,7 +12,6 @@ module.exports = {
         })
         
         const tags = await Tag.findAll()
-        //todo: get all tags count (define algorithm)
         let completedPercentage = [0, 0]
         let tagsCount = {}
         

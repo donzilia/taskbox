@@ -15,7 +15,10 @@ module.exports = {
         const tags = await Tag.findAll()
         //todo: get daily tasks completation
         //todo: get all tags count (define algorithm)
+        let completedPercentage = [0, 1];
         user.Tasks.forEach( task  => {
+            task.status === 1 ? completedPercentage[1]++ : completedPercentage[0]++
+
             let newtags = [];
             let tasktags = task.tags.split(",")
             task.tags = [];
@@ -28,7 +31,8 @@ module.exports = {
 
         res.render("dashboard", {
             title: "Dashboard",
-            user: user
+            user: user,
+            completedData: completedPercentage
         })
     },
 };

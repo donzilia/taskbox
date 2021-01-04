@@ -49,6 +49,7 @@ module.exports = {
             subject: "TASKBOX - Password Reset",
             text: `Hello ${user.fullName}, in order to reset your password credentials please click <a href="https://taskbox-web-app.herokuapp.com/reset-password/${user.id}">here.</a>`,
         }
+        console.log(mailer)
         mailer.sendMail(resetEmail, function (error) {
             if (error) {
                 console.log(error);

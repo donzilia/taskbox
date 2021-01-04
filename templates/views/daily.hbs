@@ -5,9 +5,89 @@
     {{>site_head}}
     <title>{{title}}</title>
 </head>
+
 <body id="page-top">
-    <div>
-        <p>hello world!</p>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                {{>header}}
+                <!-- Begin Page Content -->
+                <div class="container">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-5 mt-5 text-gray-800">Your Daily Tasks</h1>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12">
+                            <div class="card shadow mb-4 h-438">
+                                <div class="card-header  bg-white  py-3">
+                                    <h6 class="m-0 font-weight-bold color-title">Your Daily Tasks</h6>
+                                </div>
+                                <div class="card-body overflow-auto p-1">
+                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
+                                        <div class="card h-100">
+                                            <div class="card-body p-2">
+                                                <div class="custom-control custom-checkbox">
+                                                    
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        data-task-id="" id="task-"
+                                                        name="task-" data-toggle="modal"
+                                                        data-target="#modaltask-">
+                                                    <label class="custom-control-label mr-3 text-dark"
+                                                        for="task-">
+                                                        Dar banho ao gato
+                                                    </label>
+                                                    
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                    <a href="/daily">View more...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            {{>footer}}
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
     </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+
 </body>
+
 </html>

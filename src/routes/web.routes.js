@@ -24,6 +24,7 @@ module.exports = (router) => {
     /***
      * Tasks routes
      */
+    router.get('/daily', (req, res) => { res.render('daily', {}) })
 
     /**
      * User routes

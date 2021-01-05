@@ -87,7 +87,7 @@
                                 <h6 class="m-0 font-weight-bold color-title">Tags Count</h6>
                             </div>
                             <div class="card-body overflow-auto p-1">
-                                {{#each tags}}
+                                {{#each tagsWithTasks}}
                                         <div class="col-md-12 col-sm-12 mb-2 p-0">
                                             <div class="card border-left-primary h-100"
                                                  style="border-left: .25rem solid {{this.color}}!important;">
@@ -146,6 +146,8 @@
 <!-- Page level custom scripts -->
 <script src="/js/demo/chart-area-demo.js"></script>
 <script src="/js/demo/chart-pie-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.full.min.js"></script>
+<script src="/js/custom.js"></script>
 
 <script>
     var ctx = document.getElementById("myPieChart");

@@ -39,7 +39,8 @@ module.exports = {
             user: user,
             completedData: completedPercentage,
             tCounter: tagsCount,
-            tags: tagsWithTasks
+            tagsWithTasks: tagsWithTasks,
+            tags: tags
         })
     }
 };

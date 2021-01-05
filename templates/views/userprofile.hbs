@@ -22,9 +22,17 @@
                     </h1>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-md-12 text-center mt-3 mb-5">
-                        <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                    </div>
+                    <form method="POST" action="/edit/profile/{{userId}}" enctype="multipart/form-data">
+                        <div class="col-xl-4 col-md-12 text-center mt-3 mb-5">
+                            <div class="preview img-wrapper"></div>
+                            <div class="file-upload-wrapper">
+                                <input type="file" name="file" class="file-upload-native" accept="image/*" />
+                                <input type="text" disabled placeholder="upload image" class="file-upload-text" />
+                            </div>
+                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                        </div>
+                        <button type="submit">submit</button>
+                    </form>
                     <div
                             class="col-xl-8 col-md-12 border border-info border-right-0 border-top-0 border-bottom-0 mt-3 mb-5">
                         <div class="container">
@@ -96,6 +104,77 @@
 <!-- Custom scripts for all pages-->
 <script src="/js/sb-admin-2.min.js"></script>
 <script src="node_modules/select2/dist/js/select2.min.js"></script>
+
+<script>
+    $(function() {
+        function maskImgs() {
+            //$('.img-wrapper img').imagesLoaded({}, function() {
+            $.each($('.img-wrapper img'), function(index, img) {
+                var src = $(img).attr('src');
+                var parent = $(img).parent();
+                parent
+                        .css('background', 'url(' + src + ') no-repeat center center')
+                        .css('background-size', 'cover');
+                $(img).remove();
+            });
+            //});
+        }
+
+        var preview = {
+            init: function() {
+                preview.setPreviewImg();
+                preview.listenInput();
+            },
+            setPreviewImg: function(fileInput) {
+                var path = $(fileInput).val();
+                var uploadText = $(fileInput).siblings('.file-upload-text');
+
+                if (!path) {
+                    $(uploadText).val('');
+                } else {
+                    path = path.replace(/^C:\\fakepath\\/, "");
+                    $(uploadText).val(path);
+
+                    preview.showPreview(fileInput, path, uploadText);
+                }
+            },
+            showPreview: function(fileInput, path, uploadText) {
+                var file = $(fileInput)[0].files;
+
+                if (file && file[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        var previewImg = $(fileInput).parents('.file-upload-wrapper').siblings('.preview');
+                        var img = $(previewImg).find('img');
+
+                        if (img.length == 0) {
+                            $(previewImg).html('<img src="' + e.target.result + '" alt=""/>');
+                        } else {
+                            img.attr('src', e.target.result);
+                        }
+
+                        uploadText.val(path);
+                        maskImgs();
+                    }
+
+                    reader.onloadstart = function() {
+                        $(uploadText).val('uploading..');
+                    }
+
+                    reader.readAsDataURL(file[0]);
+                }
+            },
+            listenInput: function() {
+                $('.file-upload-native').on('change', function() {
+                    preview.setPreviewImg(this);
+                });
+            }
+        };
+        preview.init();
+    });
+</script>
+
 </body>
 
 </html>

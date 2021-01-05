@@ -4,7 +4,12 @@ const UserController = require("../controllers/user.controller")
 const asyncRoute = require("../middleware/async.route")
 const requestsMiddleware = require("../middleware/requests.middleware")
 const {signInChecker} = require("../middleware/redirect.middleware")
+const multer = require("multer")
+const path = require("path")
 
+var upload = multer({
+    dest: path.join(__dirname, "../../public/tmp/files")
+});
 module.exports = (router) => {
     router.get('/', signInChecker, asyncRoute(HomeController.index))
     /**
@@ -29,7 +34,8 @@ module.exports = (router) => {
     /**
      * User routes
      */
-    router.get('/profile', signInChecker, (req, res) => { res.render('userprofile', {}) })
+    router.get('/profile', signInChecker, (req, res) => { res.render('userprofile', {userId: req.session.userId}) })
+    router.post('/edit/profile/:userId', upload.single("file"), asyncRoute(UserController.update))
 
     router.get('*', (req,res) => {
         res.render("404");

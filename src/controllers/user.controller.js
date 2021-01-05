@@ -1,7 +1,11 @@
+const fs = require("fs")
+const path = require("path")
 const {User, Task} = require("../models/index")
 const ERRORS = require("../config/errors")
 const MESSAGE = require("../config/message")
 const mailer = require("../services/mailer")
+const url = require("url");
+
 
 module.exports = {
     store: async (req, res, next) => {
@@ -33,7 +37,26 @@ module.exports = {
     },
 
     update: async (req, res, next) => {
-        //todo: implement update user here
+        const dir=`${req.headers.host}/img/uploads/`;
+        const tempPath = req.file.path;
+        const targetPath = path.join(__dirname, `../../public/img/uploads/${req.file.filename}.png`);
+
+        if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+            fs.rename(tempPath, targetPath, err => {
+                if (err) console.log(err)
+                const user  = User.findByPk(req.session.userId).then(user => {
+                    user.profilePic = `${dir}${req.file.filename}.png`
+                    user.save();
+                }).catch(err => {
+                    //todo: validade user message
+                })
+            });
+        } else {
+            fs.unlink(tempPath, err => {
+                if (err) console.log(err)
+                res.send({error: "sim"}) ;
+            });
+        }
     },
 
     forgotPwd: async (req, res, next) => {

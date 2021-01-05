@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     }, { timestamps: false, tableName: "users" });
 
     User.associate = (models) => {
-        User.hasMany(models.Task, { sourceKey: 'id', foreignKey: 'userId', as: 'tasks'})
+        User.hasMany(models.Task, { sourceKey: 'id', foreignKey: 'userId'})
     }
    
     User.generateHash = (password) => {

@@ -36,6 +36,10 @@ hbs.registerHelper('for', function (from, to, incr, block) {
 	return accum;
 });
 
+hbs.registerHelper('tagCount', function(property, id) {
+	return property[id];
+})
+
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 app.use(session({

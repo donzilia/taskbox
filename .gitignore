@@ -117,3 +117,6 @@ dist
 
 .vscode
 .idea/*
+.idea/
+
+public/img/uploads/

@@ -12,6 +12,7 @@ module.exports = {
         })
 
         let tags = await Tag.findAll()
+        let tagsWithTasks
         let completedPercentage = [0, 0]
         let tagsCount = {}
 
@@ -32,8 +33,11 @@ module.exports = {
                 task.tags.push(newtags);
             })
         }
-        let tagsWithTasks = tags.filter(tag => { if (tagsCount[tag.id] > 0) return tag })
-
+        if(tags !== null) {
+            let tagsWithTasks = tags.filter(tag => {
+                if (tagsCount[tag.id] > 0) return tag
+            })
+        }
         res.render("dashboard", {
             title: "Dashboard",
             user: user,

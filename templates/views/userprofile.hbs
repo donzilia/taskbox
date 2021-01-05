@@ -22,73 +22,45 @@
                     </h1>
                 </div>
                 <div class="row">
-                    <form method="POST" action="/edit/profile/{{userId}}" enctype="multipart/form-data">
+                    <form method="POST" action="/edit/profile/{{user.id}}" enctype="multipart/form-data" class="w-100 row user">
                         <div class="col-xl-4 col-md-12 text-center mt-3 mb-5">
                             <div class="preview img-wrapper"></div>
                             <div class="file-upload-wrapper">
-                                <input type="file" name="file" class="file-upload-native" accept="image/*" />
-                                <input type="text" disabled placeholder="upload image" class="file-upload-text" />
+                                <input type="file" name="file" class="file-upload-native" accept="image/*"/>
+                                <input type="text" disabled placeholder="upload image" class="file-upload-text"/>
                             </div>
-                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                         </div>
-                        <button type="submit">submit</button>
-                    </form>
-                    <div
-                            class="col-xl-8 col-md-12 border border-info border-right-0 border-top-0 border-bottom-0 mt-3 mb-5">
-                        <div class="container">
-                            <form method="POST" class="user" action="/update/user/{{userId}}">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email</label>
-                                        <input type="email" class="form-control form-control-user" id="inputEmail4"
-                                               placeholder="Email">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Password</label>
+                        <div class="col-xl-8 col-md-12 border border-info border-right-0 border-top-0 border-bottom-0 mt-3 mb-5">
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control form-control-user" id="fullName"
+                                           placeholder="Full Name..." name="fullname" value="{{user.fullName}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">E-mail</label>
+                                    <input type="email" class="form-control form-control-user" name="email"
+                                           id="exampleInputEmail" placeholder="Email Address" value="{{user.email}}">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="exampleInputPassword">Password</label>
                                         <input type="password" class="form-control form-control-user"
-                                               id="inputPassword4"
-                                               placeholder="Password">
+                                               id="exampleInputPassword" placeholder="Password" name="password">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="exampleRepeatPassword">Password</label>
+                                        <input type="password" class="form-control form-control-user"
+                                               id="exampleRepeatPassword" placeholder="Repeat Password"
+                                               name="confirmpassword">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputAddress">Address</label>
-                                    <input type="text" class="form-control form-control-user" id="inputAddress"
-                                           placeholder="1234 Main St">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress2">Address 2</label>
-                                    <input type="text" class="form-control form-control-user" id="inputAddress2"
-                                           placeholder="Apartment, studio, or floor">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">City</label>
-                                        <input type="text" class="form-control form-control-user" id="inputCity">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">State</label>
-                                        <select id="inputState" class="form-control form-control-user">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Zip</label>
-                                        <input type="text" class="form-control form-control-user" id="inputZip">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                            </form>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Update Profile
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -106,10 +78,21 @@
 <script src="node_modules/select2/dist/js/select2.min.js"></script>
 
 <script>
-    $(function() {
+    $(document).ready(function (e) {
+        let imgW = $(".img-wrapper");
+        {{#if user.profilePic}}
+            imgW.css('background', 'url({{user.profilePic}}) no-repeat center center')
+        {{else}}
+            imgW.css('background', 'url(img/undraw_profile.svg) no-repeat center center')
+        {{/if}}
+
+        imgW.css('background-size', 'cover');
+    })
+
+    $(function () {
         function maskImgs() {
             //$('.img-wrapper img').imagesLoaded({}, function() {
-            $.each($('.img-wrapper img'), function(index, img) {
+            $.each($('.img-wrapper img'), function (index, img) {
                 var src = $(img).attr('src');
                 var parent = $(img).parent();
                 parent
@@ -121,11 +104,11 @@
         }
 
         var preview = {
-            init: function() {
+            init: function () {
                 preview.setPreviewImg();
                 preview.listenInput();
             },
-            setPreviewImg: function(fileInput) {
+            setPreviewImg: function (fileInput) {
                 var path = $(fileInput).val();
                 var uploadText = $(fileInput).siblings('.file-upload-text');
 
@@ -138,13 +121,13 @@
                     preview.showPreview(fileInput, path, uploadText);
                 }
             },
-            showPreview: function(fileInput, path, uploadText) {
+            showPreview: function (fileInput, path, uploadText) {
                 var file = $(fileInput)[0].files;
 
                 if (file && file[0]) {
                     var reader = new FileReader();
 
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         var previewImg = $(fileInput).parents('.file-upload-wrapper').siblings('.preview');
                         var img = $(previewImg).find('img');
 
@@ -158,15 +141,15 @@
                         maskImgs();
                     }
 
-                    reader.onloadstart = function() {
+                    reader.onloadstart = function () {
                         $(uploadText).val('uploading..');
                     }
 
                     reader.readAsDataURL(file[0]);
                 }
             },
-            listenInput: function() {
-                $('.file-upload-native').on('change', function() {
+            listenInput: function () {
+                $('.file-upload-native').on('change', function () {
                     preview.setPreviewImg(this);
                 });
             }

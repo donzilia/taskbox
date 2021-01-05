@@ -8,6 +8,14 @@ const url = require("url");
 
 
 module.exports = {
+    index: async (req, res, next) => {
+        const user = await User.findByPk(req.session.userId)
+
+        res.render("userprofile", {
+            user: user
+        })
+    },
+
     store: async (req, res, next) => {
         let {email, picture, fullname, password} = req.body
 
@@ -37,25 +45,35 @@ module.exports = {
     },
 
     update: async (req, res, next) => {
-        const dir=`${req.headers.host}/img/uploads/`;
-        const tempPath = req.file.path;
-        const targetPath = path.join(__dirname, `../../public/img/uploads/${req.file.filename}.png`);
+        const {fullname, email, password} = req.body
 
-        if (path.extname(req.file.originalname).toLowerCase() === ".png") {
-            fs.rename(tempPath, targetPath, err => {
-                if (err) console.log(err)
-                const user  = User.findByPk(req.session.userId).then(user => {
-                    user.profilePic = `${dir}${req.file.filename}.png`
-                    user.save();
-                }).catch(err => {
-                    //todo: validade user message
-                })
-            });
-        } else {
-            fs.unlink(tempPath, err => {
-                if (err) console.log(err)
-                res.send({error: "sim"}) ;
-            });
+        const user = await User.findByPk(req.session.userId)
+        user.fullName = fullname;
+        user.email = email;
+        user.pass = password;
+        await user.save();
+
+        if (req.file !== undefined) {
+            const dir = `${req.headers.origin}/img/uploads/`;
+            const tempPath = req.file.path;
+            const targetPath = path.join(__dirname, `../../public/img/uploads/${req.file.filename}.png`);
+
+            if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+                fs.rename(tempPath, targetPath, err => {
+                    if (err) console.log(err)
+                    const user = User.findByPk(req.session.userId).then(user => {
+                        user.profilePic = `${dir}${req.file.filename}.png`
+                        user.save();
+                    }).catch(err => {
+                        //todo: validade user message
+                    })
+                });
+            } else {
+                fs.unlink(tempPath, err => {
+                    if (err) console.log(err)
+                    res.send({error: "sim"});
+                });
+            }
         }
     },
 
@@ -88,13 +106,13 @@ module.exports = {
         let {userId} = req.params
         let {password, confirmpassword} = req.body
 
-        if(password !== confirmpassword){
+        if (password !== confirmpassword) {
             let args = {...{userId: userId}, ...ERRORS.INVALID_INPUT};
             res.render("resetpassword", args);
         }
 
         let user = await User.findByPk(userId)
-        if(! user instanceof User){
+        if (!user instanceof User) {
             res.redirect("/login")
         }
 
@@ -132,7 +150,7 @@ module.exports = {
         let {userId} = req.params
 
         let user = await User.findByPk(userId)
-        if(! user instanceof User){
+        if (!user instanceof User) {
             res.redirect("/login")
         }
 
@@ -142,7 +160,7 @@ module.exports = {
         res.render("login", MESSAGE.USER_ACTIVATED)
     },
 
-    logout: (req,res,next) => {
+    logout: (req, res, next) => {
         req.session.loggedin = false;
         req.session.email = null;
         req.session.destroy();

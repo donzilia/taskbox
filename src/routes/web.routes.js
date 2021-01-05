@@ -34,7 +34,7 @@ module.exports = (router) => {
     /**
      * User routes
      */
-    router.get('/profile', signInChecker, (req, res) => { res.render('userprofile', {userId: req.session.userId}) })
+    router.get('/profile', signInChecker, asyncRoute(UserController.index))
     router.post('/edit/profile/:userId', upload.single("file"), asyncRoute(UserController.update))
 
     router.get('*', (req,res) => {

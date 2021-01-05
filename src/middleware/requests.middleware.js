@@ -29,5 +29,14 @@ module.exports = {
             next()
         }
         next();
+    },
+
+    newTaskValidator: (req, res, next) => {
+        let {title} = req.body
+        if ((title == null || title === '' || title === undefined)) {
+            res.send(ERRORS.INVALID_INPUT)
+            next()
+        }
+        next()
     }
 }

@@ -17,18 +17,15 @@
                 <!-- Begin Page Content -->
                 <div class="container">
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <div class="d-sm-flex align-items-center justify-content-between">
                         <h1 class="h3 mb-5 mt-5 text-gray-800">Your Daily Tasks</h1>
                     </div>
                     <div class="row">
-                    <div class="col-xs-12">
-                            <div class="card shadow mb-4 h-438">
-                                <div class="card-header  bg-white  py-3">
-                                    <h6 class="m-0 font-weight-bold color-title">Your Daily Tasks</h6>
-                                </div>
+                    <div class="col-sm-12">
+                            <div class="card shadow mb-4">
                                 <div class="card-body overflow-auto p-1">
-                                    <div class="col-md-12 col-sm-12 mb-2 p-0">
-                                        <div class="card h-100">
+                                    <div class="col-xs-12 p-1">
+                                        <div class="card hover-bg h-100">
                                             <div class="card-body p-2">
                                                 <div class="custom-control custom-checkbox">
                                                     
@@ -36,9 +33,26 @@
                                                         data-task-id="" id="task-"
                                                         name="task-" data-toggle="modal"
                                                         data-target="#modaltask-">
-                                                    <label class="custom-control-label mr-3 text-dark"
+                                                    <label class="custom-control-label mr-3 no-underline"
                                                         for="task-">
-                                                        Dar banho ao gato
+                                                        <a class="text-dark" href="#">Dar banho ao gato</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 p-1">
+                                        <div class="card h-100">
+                                            <div class="card-body p-2">
+                                                <div class="custom-control custom-checkbox">
+                                                    
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        data-task-id="" id="task-2"
+                                                        name="task-" data-toggle="modal"
+                                                        data-target="#modaltask-">
+                                                    <label class="custom-control-label mr-3 no-underline"
+                                                        for="task-2">
+                                                        <a class="text-dark" href="#">Outra task</a>
                                                     </label>
                                                     
 
@@ -46,10 +60,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                </div>
-                                <div class="card-footer text-center bg-white">
-                                    <a href="/daily">View more...</a>
                                 </div>
                             </div>
                         </div>

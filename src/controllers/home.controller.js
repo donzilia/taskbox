@@ -32,12 +32,14 @@ module.exports = {
                 task.tags.push(newtags);
             })
         }
+        let tagsWithTasks = tags.filter(tag => { if (tagsCount[tag.id] > 0) return tag })
 
         res.render("dashboard", {
             title: "Dashboard",
             user: user,
             completedData: completedPercentage,
             tCounter: tagsCount,
+            tagsWithTasks: tagsWithTasks,
             tags: tags
         })
     }

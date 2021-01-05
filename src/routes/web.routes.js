@@ -24,12 +24,12 @@ module.exports = (router) => {
     /***
      * Tasks routes
      */
-    router.get('/daily', (req, res) => { res.render('daily', {}) })
-
+    router.get('/daily', signInChecker, (req, res) => { res.render('daily', {}) })
+    router.post('/new/task', signInChecker, requestsMiddleware.newTaskValidator, asyncRoute(TaskController.store))
     /**
      * User routes
      */
-    router.get('/profile',(req, res) => { res.render('userprofile', {}) })
+    router.get('/profile', signInChecker, (req, res) => { res.render('userprofile', {}) })
 
     router.get('*', (req,res) => {
         res.render("404");

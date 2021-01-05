@@ -186,3 +186,8 @@ nav.shift #centered li a:hover:after {
   padding: 0 1rem;
   height: 50px;
 }
+.select2-container--default .select2-selection--multiple{
+    border-radius: 25px !important;
+    padding: .3rem 1rem;
+    height: 50px;
+}

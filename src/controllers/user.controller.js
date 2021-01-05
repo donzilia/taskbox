@@ -101,6 +101,7 @@ module.exports = {
 
         req.session.loggedin = true
         req.session.email = email
+        req.session.userId = user.id
         res.redirect("/")
     },
 
